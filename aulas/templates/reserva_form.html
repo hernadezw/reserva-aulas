@@ -58,6 +58,41 @@
             {% endif %}
           </div>
 
+          <!-- Hora de inicio -->
+          <div class="mb-3">
+            <label for="{{ form.hora_inicio.id_for_label }}" class="form-label">
+              {{ form.hora_inicio.label }}
+            </label>
+            <input type="time"
+                  name="{{ form.hora_inicio.html_name }}"
+                  id="{{ form.hora_inicio.id_for_label }}"
+                  value="{{ form.hora_inicio.value|default_if_none:'' }}"
+                  class="form-control {% if form.hora_inicio.errors %}is-invalid{% endif %}">
+            {% if form.hora_inicio.errors %}
+              <div class="invalid-feedback">
+                {{ form.hora_inicio.errors|striptags }}
+              </div>
+            {% endif %}
+          </div>
+
+          <!-- Hora de fin -->
+          <div class="mb-3">
+            <label for="{{ form.hora_fin.id_for_label }}" class="form-label">
+              {{ form.hora_fin.label }}
+            </label>
+            <input type="time"
+                  name="{{ form.hora_fin.html_name }}"
+                  id="{{ form.hora_fin.id_for_label }}"
+                  value="{{ form.hora_fin.value|default_if_none:'' }}"
+                  class="form-control {% if form.hora_fin.errors %}is-invalid{% endif %}">
+            {% if form.hora_fin.errors %}
+              <div class="invalid-feedback">
+                {{ form.hora_fin.errors|striptags }}
+              </div>
+            {% endif %}
+          </div>
+
+
           <div class="d-grid">
             <button type="submit" class="btn btn-primary">Reservar</button>
           </div>
